@@ -1,8 +1,6 @@
 # [QuizApp](http://127.0.0.1/QuizApp)
 
-QuizApp is a sleek, intuitive, and powerful online test application which you can run on any server.
-
-
+QuizApp is a django webapp that lets admin add various quiz topics and types and also displays result after the quiz is over where multiple qustions are displayed on the same page and evaluated at the same time .
 
 ## Table of contents
 
