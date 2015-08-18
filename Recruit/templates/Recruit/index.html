@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    {% load staticfiles %}
+  <!-- Custom CSS -->
+<link href="{% static "css/style.css" %}" rel="stylesheet">
+
+ <!-- Custom Fonts -->
+    <link href="{% static "font-awesome-4.1.0/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{ MEDIA_URL }}style.css" type="text/css" media="screen">
+<style>
+body {
+
+}
+
+h1 {
+	font-size = 4em;
+}
+
+</style>
+
+</head>
+
+<body style="background: #c1bdba none repeat scroll 0 0;">
+
+    
+	<h1 style=" align:center; color:black; margin:100px 0px 0px 560px; ">QuizApp</h1>
+<div class="container">
+{% load staticfiles %}
+		
+	</style>
+
+	<div class="si">
+    <div class="sign_in">
+	    <h1 style="text-align:center;">Sign In</h1>
+	    {% if error_message1 %}<p><strong>{{ error_message1 }}</strong></p>{% endif %}
+	    <form action='/Recruit/loggedin/' method="POST">
+	    {%csrf_token%}
+	     <input class="inputbox" type="text" name="username" value="{{username}}" placeholder="Enter username" />
+		<span class="input-group-addon-login"><i class="fa fa-user fa-2x"></i></span>
+	    <br>
+	       <input class="inputbox" type="password" name="password" value="{{password}}" placeholder="Enter password" />
+<span class="input-group-addon-login"><i class="fa fa-key fa-fw fa-2x"></i></span>
+	    <br>    
+	    <input type="submit" class="btn_login" name="submit" value="Log in"  />
+		
+	    {%csrf_token%}
+	    </form>
+	    <br>    
+    </div>	
+</div>
+</div>    
+
+
+</body>
+</html

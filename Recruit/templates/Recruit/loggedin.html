@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>U r logged </title>
+</head>
+<body>
+	<h1>You are logged in {{ username }}</h1>
+	<br>
+	<h2>Time for quiz!</h2>
+
+		<h3>Select the quiz you want to take now --></h3>
+
+    		<ol>
+        	{% for quiz in quiz_list %}
+            <li><a href="/Recruit/{{ quiz.quiz.id }}/">{{ quiz.quiz.quiz_name }}</a></li>
+        	{% endfor %}
+        	</ol>
+
+	<h2>Quit!</h2>
+	<form action="/Recruit/loggedout/" method="post">
+		
+		<input type="submit" name="loggedout" value="Log Out" />
+	
+	</form>
+</body>
+</html>

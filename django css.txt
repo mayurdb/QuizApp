@@ -1,0 +1,7 @@
+(06:21:34  IST) surender.singh: <link href="../css/style.css" rel="stylesheet">
+(06:29:08  IST) surender.singh: http://stackoverflow.com/questions/11614146/django-add-style-sheet-to-site
+(06:44:57  IST) surender.singh: <link rel="stylesheet" href="{{ STATIC_URL }}style.css">
+(06:45:04  IST) surender.singh: http://stackoverflow.com/questions/9339226/how-to-load-css-in-django-templates
+(07:00:19  IST) surender.singh: Your STATICFILES_DIRS = ("/css") should actually be STATICFILES_DIRS = ("/path/to/your/css", ) (note the trailing comma — necessary because (eggs) evaluates to the value eggs, but the trailing comma forces it to evaluate to a tuple).
+(07:07:47  IST) surender.singh: STATIC_URL = '/dj/static/'
+(07:12:45  IST) surender.singh: http://www.bogotobogo.com/python/Django/Python_Django_Managing_Deploying_CSS_Image_Javascript_Static_Files_Shared_Host.php

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{quiz.quiz_name}} Quiz </title>
+   
+</head>
+<body oncontextmenu="return false;">
+    <h1>{{quiz.quiz_name}} Quiz </h1>
+
+    <form action="/Recruit/{{quiz.id}}/submitquiz" method="post">
+        {% if key %}
+        <ol>
+        {% for parent in varlist %}
+        <li>{{ parent.parent_text }}</li>
+            <ol>
+                {% for question in parent.question_set.all %}
+                    <li>{{ question.question_text }}</li>
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" name="{{ question.id }}" id="{{choice.choice_text}}" value="{{ choice.is_answer}}">
+                        <label for="{{choice.choice_text}}">{{ choice.choice_text }}</label><br>
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </ol>
+        {% endfor %}
+        </ol>
+        <input type="submit" name="submitquiz" value="Submit Quiz" />
+        {% else %}
+        <ol>
+                {% for question in varlist %}
+                    <li>{{ question.question_text }}</li>
+                    {% for choice in question.choice_set.all %}
+                        <input type="radio" name="{{ question.id }}" id="{{choice.choice_text}}" value="{{ choice.is_answer}}">
+                        <label for="{{choice.choice_text}}">{{ choice.choice_text }}</label><br>
+                    {% endfor %}
+                    <br>
+                {% endfor %}
+            </ol>
+        <input type="submit" name="submitquiz" value="Submit Quiz" />
+        {% endif %}
+    </form> 
+
+
+
+</body>
+</html>
